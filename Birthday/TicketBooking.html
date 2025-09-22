@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title> Ticket Booking</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff8e6;
+      color: #333;
+    }
+    header {
+      background: #ff6600;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #cc5200;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .amount-box {
+      background: #fff3cd;
+      padding: 15px;
+      border: 1px solid #ffcc00;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #b36b00;
+    }
+    button {
+      background: #ff6600;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background: #cc5200;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎉 Birthday Ticket Booking</h1>
+
+  </header>
+
+  <div class="container">
+    <h2>Fill Your Details</h2>
+    <form action="#" method="post">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="guests">Number of Tickets</label>
+      <select id="guests" name="guests" onchange="calculateAmount()">
+        <option value="1">1 Ticket</option>
+        <option value="2">2 Tickets</option>
+        <option value="3">3 Tickets</option>
+        <option value="4">4 Tickets</option>
+          <option value="5">5 Tickets</option>
+      </select>
+
+      <!-- Amount Box -->
+      <div class="amount-box" id="amountBox">
+        Ticket Price: ₹500 x 1 = ₹500
+      </div>
+
+      <button type="submit">Confirm & Book</button>
+    </form>
+  </div>
+
+  <script>
+    function calculateAmount() {
+      let ticketPrice = 500;
+      let guests = document.getElementById("guests").value;
+      let total = ticketPrice * guests;
+      document.getElementById("amountBox").innerText =
+        "Ticket Price: ₹500 x " + guests + " = ₹" + total;
+    }
+  </script>
+
+</body>
+</html>buyticket.html

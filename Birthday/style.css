@@ -1,5 +1,5 @@
 :root {
-  --primary: #ff5c8d;
+  --primary: #151516;
   --secondary: #333;
   --accent: #ff6b6b;
 }
@@ -8,7 +8,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: 'Gill Sens', sans-serif;
 }
 
 body {
@@ -99,8 +104,10 @@ section h2 {
 
 .about-img img, .why-img img {
   width: 100%;
+  height: 35rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  animation: floatImage 4s ease-in-out infinite;
 }
 
 /* Services */
@@ -122,7 +129,7 @@ section h2 {
   border-radius: 12px;
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: fadeInUp 1s ease;
+  animation: floatImage 4s ease-in-out infinite;
 }
 
 .service-card:hover {
@@ -163,6 +170,31 @@ section h2 {
   transform: scale(1.05);
 }
 
+  .buy-ticket {
+      text-align: center;
+      padding: 50px;
+      background: #fff7e6;
+    }
+    .buy-ticket h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #cc6600;
+    }
+    .buy-btn {
+      padding: 12px 30px;
+      font-size: 1.2rem;
+      background: #ff6600;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .buy-btn:hover {
+      background: #cc5200;
+    }
+
+
 /* Footer */
 footer {
   background: #222;
@@ -183,14 +215,26 @@ footer .socials a {
 }
 
 /* Animations */
-@keyframes fadeInDown {
+ @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeInUp {
+/* @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}  */
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.4rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 /* Responsive
